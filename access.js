@@ -12,7 +12,7 @@
     )
   ) {
     document.write(
-      '<meta name="stylesheet" content="https://LuisHenriqueSantana.github.io/meu-css-cdn/csss/style.min.css">' +
+      '<meta name="stylesheet" content="https://LuisHenriqueSantana.github.io/meu-css-cdn/css/style.min.css">' +
       '<script>' +
       'const styleUrl = document.querySelector(\'meta[name="stylesheet"]\').content;' +
       'const link = document.createElement(\'link\');' +
