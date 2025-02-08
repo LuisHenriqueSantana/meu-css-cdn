@@ -1,15 +1,25 @@
-(function() {
-  const sitesPermitidos = {
-    'https://rikbranding.catalog.yampi.io/': 'chave123',
-  };
+(function () {
+  const dominiosPermitidos = [
+    "https://rikbranding.catalog.yampi.io/",
+    "yampi.me",
+    "lojaintegrada.com.br",
+    // adicione mais domínios aqui
+  ];
 
-  const domainAtual = window.location.hostname;
-  const chaveInformada = document.currentScript.getAttribute('data-key');
-  
-  if (sitesPermitidos[domainAtual] === chaveInformada) {
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = 'https://LuisHenriqueSantana.github.io/meu-css-cdn/css/style.min.css';
-    document.head.appendChild(link);
+  if (
+    dominiosPermitidos.some((domain) =>
+      window.location.hostname.includes(domain)
+    )
+  ) {
+    document.write(
+      '<meta name="stylesheet" content="https://LuisHenriqueSantana.github.io/meu-css-cdn/csss/style.min.css">' +
+      '<script>' +
+      'const styleUrl = document.querySelector(\'meta[name="stylesheet"]\').content;' +
+      'const link = document.createElement(\'link\');' +
+      'link.rel = "stylesheet";' +
+      'link.href = styleUrl;' +
+      'document.head.appendChild(link);' +
+      '</script>'
+    );
   }
-})(); 
+})();
