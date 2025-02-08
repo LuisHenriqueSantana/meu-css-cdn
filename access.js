@@ -1,25 +1,23 @@
 (function () {
   const dominiosPermitidos = [
-    "https://rikbranding.catalog.yampi.io/",
-    "yampi.me",
-    "lojaintegrada.com.br",
+    "rikbranding.catalog.yampi.io",
     // adicione mais domínios aqui
   ];
 
-  if (
-    dominiosPermitidos.some((domain) =>
-      window.location.hostname.includes(domain)
-    )
-  ) {
-    document.write(
-      '<meta name="stylesheet" content="https://LuisHenriqueSantana.github.io/meu-css-cdn/css/style.min.css">' +
-      '<script>' +
-      'const styleUrl = document.querySelector(\'meta[name="stylesheet"]\').content;' +
-      'const link = document.createElement(\'link\');' +
-      'link.rel = "stylesheet";' +
-      'link.href = styleUrl;' +
-      'document.head.appendChild(link);' +
-      '</script>'
-    );
+  const domainAtual = window.location.hostname;
+
+  if (dominiosPermitidos.some((domain) => domainAtual.includes(domain))) {
+    // Cria meta tag
+    const meta = document.createElement("meta");
+    meta.name = "stylesheet";
+    meta.content =
+      "https://LuisHenriqueSantana.github.io/meu-css-cdn/css/style.min.css";
+    document.head.appendChild(meta);
+
+    // Cria link tag
+    const link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = meta.content;
+    document.head.appendChild(link);
   }
 })();
