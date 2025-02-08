@@ -8,7 +8,7 @@ https://rikbranding.catalog.yampi.io/
   if (dominiosPermitidos.includes(domainAtual)) {
     const link = document.createElement('link');
     link.rel = 'stylesheet';
-    link.href = 'https://seu-usuario.github.io/meu-css-cdn/css/style.min.css';
+    link.href = 'https://LuisHenriqueSantana.github.io/meu-css-cdn/css/style.min.css';
     document.head.appendChild(link);
   }
 })();
